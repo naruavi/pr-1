@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">projectavi001</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appDb">projectavi001.db</string>
+    <string name="price">price</string>
+    <string name="your_reason">your reason</string>
+    <string name="add">Add</string>
+    <string name="payment_method">payment method</string>
+    <string name="choose_transaction_type">choose transaction type</string>
+</resources>
