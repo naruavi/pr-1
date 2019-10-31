@@ -17,7 +17,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * Created by abhilashgupta on Sep, 2019
  */
 
-class HomeFragment : Fragment(), View.OnClickListener, CalendarView.OnDateChangeListener, PaymentDetailOnClickListener {
+class HomeFragment : Fragment(), View.OnClickListener, CalendarView.OnDateChangeListener,
+    PaymentDetailOnClickListener {
     override fun removePaymentDettail(paymentDetail: PaymentDetail) {
         viewModel.delete(paymentDetail)
     }
@@ -80,23 +81,31 @@ class HomeFragment : Fragment(), View.OnClickListener, CalendarView.OnDateChange
             viewModel.byDate.value?.let {
                 cv_calender.date = getCurrentDateInMillis(it)
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
 
-    private fun getPaymentList(){
+    private fun getPaymentList() {
         viewModel.byDate.observe(this, Observer { date ->
             viewModel.getAllPaymentsByDate(date)
                 .observe(this@HomeFragment, Observer {
                     (rv_payment_detail.adapter as PaymentDetailAdapter).setPaymentDetails(it)
-                    var sum = 0.0
-                    for (i in it){
-                        sum += i.price
-                    }
-                    tv_total_price.text = sum.toString()
+//                    calculateDailySpentMoney(it)
                 })
         })
+    }
+
+    private fun calculateDailySpentMoney(paymentList: List<PaymentDetail>) {
+        var sum = 0.0
+        for (i in paymentList) {
+            if(i.transactionType == TransactionType.CREDIT.getTransactionType()){
+                sum -= i.price
+            } else {
+                sum += i.price
+            }
+        }
+        tv_total_price.text = sum.toString()
     }
 
     override fun onSelectedDayChange(

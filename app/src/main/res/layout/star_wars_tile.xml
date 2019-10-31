@@ -36,11 +36,11 @@
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"/>-->
 
-        <ImageView
-            android:background="@drawable/ic_box_games_light_side"
-            android:padding="@dimen/dimen_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/c3po"/>
+<!--        <ImageView-->
+<!--            android:background="@drawable/ic_box_games_light_side"-->
+<!--            android:padding="@dimen/dimen_24dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/c3po"/>-->
     </FrameLayout>
 </layout>

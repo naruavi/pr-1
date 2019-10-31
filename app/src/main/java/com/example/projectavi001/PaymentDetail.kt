@@ -23,7 +23,7 @@ data class PaymentDetail(
     @ColumnInfo(name = "price")
     var price: Double,
     @ColumnInfo(name = "transaction_type")
-    var transactionType: TransactionType,
-    @ColumnInfo(name = "payment_type")
-    var paymentType: String
+    var transactionType: String,
+    @ColumnInfo(name = "payment_method")
+    var paymentMethod: String
 ) : Parcelable

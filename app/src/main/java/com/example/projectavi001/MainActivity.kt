@@ -37,23 +37,23 @@ class MainActivity : AppCompatActivity() {
     private fun setObservers() {
         viewModel.addPaymentBtn.observe(
             this, Observer {
-                if(it){
-//                    startActivity(Intent(this, EventActivity::class.java))
-                    supportFragmentManager.beginTransaction()
-                        .addToBackStack(AddPaymentDetailFragment::class.java.simpleName)
-                        .replace(R.id.ll_home_container, AddPaymentDetailFragment()).commit()
+                if (it) {
+                    startActivity(Intent(this, EventActivity::class.java))
+//                    supportFragmentManager.beginTransaction()
+//                        .addToBackStack(AddPaymentDetailFragment::class.java.simpleName)
+//                        .replace(R.id.ll_home_container, AddPaymentDetailFragment()).commit()
                 }
             }
         )
-        viewModel.updatePaymentDetail.observe(
-            this, Observer {
-                if(isObserverSet){
-                    val fragment = AddPaymentDetailFragment.newInstance(it, "update")
-                    supportFragmentManager.beginTransaction()
-                        .addToBackStack(AddPaymentDetailFragment::class.java.simpleName)
-                        .replace(R.id.ll_home_container, fragment).commit()
-                }
-            }
-        )
+//        viewModel.updatePaymentDetail.observe(
+//            this, Observer {
+//                if(isObserverSet){
+//                    val fragment = AddPaymentDetailFragment.newInstance(it, "update")
+//                    supportFragmentManager.beginTransaction()
+//                        .addToBackStack(AddPaymentDetailFragment::class.java.simpleName)
+//                        .replace(R.id.ll_home_container, fragment).commit()
+//                }
+//            }
+//        )
     }
 }

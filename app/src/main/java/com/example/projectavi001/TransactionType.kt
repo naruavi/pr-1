@@ -1,22 +1,24 @@
 package com.example.projectavi001
 
+import java.util.HashMap
+
 /**
  * Created by abhilashgupta on Oct, 2019
  */
-enum class TransactionType(i: Int) {
-    DEBIT(1),
-    CREDIT(2),
-    PENDING(3),
-    UNKOWN(4);
+enum class TransactionType(i: String) {
+    DEBIT("DEBIT"),
+    CREDIT("CREDIT"),
+    PENDING("PENDING"),
+    UNKOWN("UNKNOW");
 
-    var type: Int = 0
+    var type: String = ""
         internal set
 
     init {
         type = i
     }
 
-    fun getTransactionType(): Int {
+    fun getTransactionType(): String {
         return type
     }
 }

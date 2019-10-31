@@ -9,9 +9,10 @@ import androidx.room.RoomDatabase
  * Created by abhilashgupta on Sep, 2019
  */
 
-@Database(entities = [PaymentDetail::class], version = 1)
+@Database(entities = [PaymentDetail::class, LendAndBorrowDetail::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun paymentDetailDao(): PaymentDetailDao
+    abstract fun lendAndBorrowDoa(): LendAndBorrowDetailDao
 
     companion object : SingletonHolder<AppDatabase, Context>({
         Room.databaseBuilder(

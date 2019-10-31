@@ -15,9 +15,9 @@ class AddPaymentDetailViewModel(application: Application) : AndroidViewModel(app
 
     fun insert(paymentDetail: PaymentDetail) {
         repository.insert(paymentDetail)
-        if(repository.actionResult.success){
+        if (repository.actionResult.success) {
             repoCall.value = repository.actionResult.success
-        } else{
+        } else {
             repoCall.value = repository.actionResult.success
         }
     }

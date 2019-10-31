@@ -9,4 +9,15 @@
     <string name="add">Add</string>
     <string name="payment_method">payment method</string>
     <string name="choose_transaction_type">choose transaction type</string>
+    <string name="name">name</string>
+    <string-array name="lend_borrow_drop_down">
+        <item>LEND</item>
+        <item>BORROW</item>
+    </string-array>
+    <string-array name="trasaction_type">
+        <item>DEBIT</item>
+        <item>CREDIT</item>
+        <item>PENDING</item>
+        <item>UNKOWN</item>
+    </string-array>
 </resources>
